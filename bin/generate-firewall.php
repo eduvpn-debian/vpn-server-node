@@ -7,7 +7,10 @@
  * Copyright: 2016-2017, The Commons Conservancy eduVPN Programme
  * SPDX-License-Identifier: AGPL-3.0+
  */
-require_once sprintf('%s/vendor/autoload.php', dirname(__DIR__));
+
+$baseDir = '/usr/share/vpn-server-node';
+
+require_once sprintf('%s/vendor/autoload.php', $baseDir);
 
 use SURFnet\VPN\Common\CliParser;
 use SURFnet\VPN\Common\Config;
@@ -32,7 +35,7 @@ try {
         exit(0);
     }
 
-    $configDir = sprintf('%s/config', dirname(__DIR__));
+    $configDir = sprintf('%s/config', $baseDir);
 
     // load generic firewall configuration
     try {
