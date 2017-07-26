@@ -2,5 +2,5 @@
 version=3
 
 opts=filenamemangle=s/.+\/v?(\d\S+)\.tar\.gz/vpn-server-node-$1\.tar\.gz/ \
-  https://github.com/eduvpn/vpn-server-node/tags .*/?(\d\S+)\.tar\.gz
+  https://github.com/eduvpn/vpn-server-node/tags .*/v?(\d\S+)\.tar\.gz
 
