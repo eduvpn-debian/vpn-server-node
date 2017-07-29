@@ -7,8 +7,7 @@
  * Copyright: 2016-2017, The Commons Conservancy eduVPN Programme
  * SPDX-License-Identifier: AGPL-3.0+
  */
-$baseDir = '/usr/share/vpn-server-node';
-require_once sprintf('%s/vendor/autoload.php', $baseDir);
+require_once sprintf('%s/vendor/autoload.php', dirname(__DIR__));
 
 use SURFnet\VPN\Common\CliParser;
 use SURFnet\VPN\Common\Config;
@@ -38,14 +37,14 @@ try {
     $profileId = $opt->getItem('profile');
     $generateCerts = $opt->hasItem('generate');
 
-    $configFile = sprintf('%s/config/%s/config.php', $baseDir, $instanceId);
+    $configFile = sprintf('%s/config/%s/config.php', dirname(__DIR__), $instanceId);
     $config = Config::fromFile($configFile);
 
     $vpnUser = $config->hasItem('vpnUser') ? $config->getItem('vpnUser') : 'openvpn';
     $vpnGroup = $config->hasItem('vpnGroup') ? $config->getItem('vpnGroup') : 'openvpn';
 
-    $vpnConfigDir = sprintf('%s/openvpn-config', $baseDir);
-    $vpnTlsDir = sprintf('%s/openvpn-config/tls/%s/%s', $baseDir, $instanceId, $profileId);
+    $vpnConfigDir = sprintf('%s/openvpn-config', dirname(__DIR__));
+    $vpnTlsDir = sprintf('%s/openvpn-config/tls/%s/%s', dirname(__DIR__), $instanceId, $profileId);
 
     $serverClient = new ServerClient(
         new CurlHttpClient([$config->getItem('apiUser'), $config->getItem('apiPass')]),

@@ -7,8 +7,7 @@
  * Copyright: 2016-2017, The Commons Conservancy eduVPN Programme
  * SPDX-License-Identifier: AGPL-3.0+
  */
-$baseDir = '/usr/share/vpn-server-node';
-require_once sprintf('%s/vendor/autoload.php', $baseDir);
+require_once sprintf('%s/vendor/autoload.php', dirname(__DIR__));
 
 use SURFnet\VPN\Common\Config;
 use SURFnet\VPN\Common\Http\InputValidation;
@@ -38,7 +37,7 @@ try {
     }
 
     $instanceId = InputValidation::instanceId($envData['INSTANCE_ID']);
-    $configDir = sprintf('%s/config/%s', $baseDir, $instanceId);
+    $configDir = sprintf('%s/config/%s', dirname(__DIR__), $instanceId);
     $config = Config::fromFile(
         sprintf('%s/config.php', $configDir)
     );
