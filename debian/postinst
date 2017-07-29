@@ -1,5 +1,0 @@
-#!/bin/sh
-
-#DEBHELPER
-
-chmod 755 /usr/libexec/vpn-server-node-*
