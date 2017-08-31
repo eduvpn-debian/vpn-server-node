@@ -11,7 +11,7 @@ Vcs-Git: git://github.com/eduvpn-debian/vpn-server-node.git
 Vcs-Browser: https://github.com/eduvpn-debian/vpn-server-node/
 
 Package: vpn-server-node
-Architecture: any
+Architecture: all
 Depends: ${misc:Depends}, ${phpcomposer:Debian-require}, openvpn
 Suggests: ${phpcomposer:Debian-suggest}
 Description: ${phpcomposer:description}
