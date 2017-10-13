@@ -1,5 +1,26 @@
 #!/bin/sh
+# postinst script for vpn-server-node
+#
+# see: dh_installdeb(1)
 
-#DEBHELPER
+set -e
 
-chmod 755 /usr/libexec/vpn-server-node-*
+if [ -f /usr/share/debconf/confmodule ]; then
+        . /usr/share/debconf/confmodule
+fi
+
+case "$1" in
+    configure)
+	chmod 755 /usr/libexec/vpn-server-node-*
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
