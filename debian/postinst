@@ -11,7 +11,8 @@ fi
 
 case "$1" in
     configure)
-	chmod 755 /usr/libexec/vpn-server-node-*
+	chmod 755 /usr/share/vpn-server-node/bin/*
+	chmod 755 /usr/share/vpn-server-node/libexec/*
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

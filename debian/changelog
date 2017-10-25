@@ -1,3 +1,10 @@
+vpn-server-node (1.0.4-1) stable; urgency=medium
+
+  * new upstream release
+  * restructure to make patchless
+
+ -- Gijs Molenaar (launchpad ppa build key) <gijs@pythonic.nl>  Wed, 25 Oct 2017 17:01:30 +0200
+
 vpn-server-node (1.0.3-1) stable; urgency=medium
 
   [ Gijs Molenaar ]
