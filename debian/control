@@ -12,7 +12,12 @@ Vcs-Browser: https://github.com/eduvpn-debian/vpn-server-node/
 
 Package: vpn-server-node
 Architecture: all
-Depends: ${misc:Depends}, ${phpcomposer:Debian-require}, openvpn, php-cli
+Depends:
+ ${misc:Depends},
+ ${phpcomposer:Debian-require},
+ openvpn,
+ php-cli,
+ php-symfony-phpunit-bridge
 Suggests: ${phpcomposer:Debian-suggest}
 Description: OpenVPN node controller
  This should be an extended description but the upstream project doesn't
